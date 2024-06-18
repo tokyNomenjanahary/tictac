@@ -1,0 +1,181 @@
+@extends('layouts.adminappinner')
+
+@section('content')
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Config
+        </h1>
+    </section>
+    <!-- Main content -->
+    <section class="content">
+        @if ($message = Session::get('error'))
+        <div class="alert alert-danger fade in alert-dismissable">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+            {{ $message }}
+        </div>
+
+        @endif
+        @if ($message = Session::get('status'))
+        <div class="alert alert-success fade in alert-dismissable">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+            {{ $message }}
+        </div>
+        @endif
+        <div class="row">
+            <div class="col-md-12 show-message">
+                <!-- general form elements -->
+                <form id="edit-package" method="POST" action="{{ route('admin.save-config')}}" enctype="multipart/form-data" role="form">
+                    {{ csrf_field() }}
+
+                    <div class="box box-primary ">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Config</h3>
+                        </div>
+                        <div class="box-body" id="content-list-phrase">
+
+                            <div id="" class="row row-phrase">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-12">
+                                        <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
+                                            <label>Nb annonce colocataire ville :</label>
+                                            <input type="text" class="form-control" placeholder="Nb annonce colocataire ville" name="nombre_colocataire_villes" value="{{getConfig('nombre_colocataire_villes')}}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-12">
+                                        <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
+                                            <label>Nb annonce colocation ville :</label>
+                                            <input type="text" class="form-control" placeholder="Nb annonce colocation ville" name="nombre_colocation_villes" value="{{getConfig('nombre_colocation_villes')}}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-12">
+                                        <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
+                                            <label>Nb profils sponsorisés acceuil :</label>
+                                            <input type="text" class="form-control" placeholder="Nb profils sponsorisés acceuil" name="nombre_profils_sponsorises_acceuil" value="{{getConfig('nombre_profils_sponsorises_acceuil')}}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-12">
+                                        <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
+                                            <label>Nb annonce sponsorisés acceuil :</label>
+                                            <input type="text" class="form-control" placeholder="Nb annonce sponsorisés acceuil" name="nombre_annonce_sponsorises_acceuil" value="{{getConfig('nombre_annonce_sponsorises_acceuil')}}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-12">
+                                        <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
+                                            <label>Nb annonce par page dans resultat de recherche :</label>
+                                            <input type="text" class="form-control" placeholder="Nb annonce par page dans resultat de recherche" name="nb_per_page_search" value="{{getConfig('nb_per_page_search')}}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-12">
+                                        <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
+                                            <label>Bitly token :</label>
+                                            <input type="text" class="form-control" placeholder="Nb annonce par page dans resultat de recherche" name="bitly_token" value="{{getConfig('bitly_token')}}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-12">
+                                        <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
+                                            <label>Bl.ink email :</label>
+                                            <input type="text" class="form-control" placeholder="Nb annonce par page dans resultat de recherche" name="email_blink" value="{{getConfig('email_blink')}}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-12">
+                                        <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
+                                            <label>Bl.ink mot de passe :</label>
+                                            <input type="text" class="form-control" placeholder="Nb annonce par page dans resultat de recherche" name="mdp_blink" value="{{getConfig('mdp_blink')}}"/>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-12">
+                                        <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
+                                            <label>Nb max d'affichage de contact :</label>
+                                            <input type="text" class="form-control" placeholder="Nombre d'affihage de contact pour les premium" name="nb_max_contact" value="{{getConfig('nb_max_contact')}}"/>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-12">
+                                        <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
+                                            <label>Nombre de ligne publication Community :</label>
+                                            <input type="text" class="form-control" placeholder="Nombre de ligne publication Community" name="nb_publication" value="{{getConfig('nb_publication')}}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-12">
+                                        <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
+                                            <label>Temps de requête des fichiers js :</label>
+                                            <input type="text" class="form-control" placeholder="Temps de requête des fichiers js (en ms) " name="temps_requete_js" value="{{getConfig('temps_requete_js')}}"/>
+                                        </div>
+                                    </div>
+                                <                                
+                                <!-- toc toc -->
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-12">
+                                        <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
+                                            <label>Nombre maximun de toc toc utilisateur :</label>
+                                            <input type="text" class="form-control" placeholder="Nombre de toc toc utilisateur" name="free_message_flash" value="{{getConfig('free_message_flash')}}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- toc toc -->
+
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="box-footer">
+                                    <button type="submit" class="btn btn-info" id="edit-profile-step-3">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <!-- /.box -->
+            </div>
+        </div>
+    </section>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#add-regex-btn').on('click', function(){
+            $('#regex-modal').modal("show");
+        });
+        $(".btn-remove-phrase").on('click', function(){
+            $('#delete_regex').val($(this).attr('data-id'));
+            $('#regex-delete-modal').modal('show');
+        });
+    });
+</script>
+<style type="text/css">
+    .row-phrase
+    {
+        padding : 15px;
+    }
+
+    .row-phrase input
+    {
+        max-width : 400px;
+    }
+</style>
+@endsection

@@ -1,0 +1,30 @@
+// JavaScript Document
+
+$(document).ready(function() {
+     $("#btn_menu").click(function(event){
+        event.preventDefault ? event.preventDefault() : event.returnValue = false;
+		if($("#deroulant").css("display")=="none"){
+			//$("#sousmenu").css("display", "block");
+			$("#deroulant").addClass("on");
+			$("#btn_menu").addClass("on");
+		}else{
+			//$("#sousmenu").css("display", "none");
+			$("#deroulant").removeClass("on");
+			$("#btn_menu").removeClass("on");
+		}
+	})
+	$('.slider').owlCarousel({
+    	loop:true,
+    	margin:0,
+		autoplay:true,
+		dots:true,
+    	nav:true,
+		smartSpeed:1800,
+		responsiveClass:true,
+    	items:1,
+
+	});
+
+
+});
+

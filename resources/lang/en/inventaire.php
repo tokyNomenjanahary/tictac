@@ -1,0 +1,38 @@
+<?php
+return[
+    "Inventaires" => i18n("inventaire.Inventaires",'en'),
+    "Nouveau_inventaire" => i18n("inventaire.Nouveau_inventaire",'en'),
+    "Tous_les_prop" => i18n("inventaire.Tous_les_prop",'en'),
+    "identifiant" => i18n("inventaire.identifiant",'en'),
+    "valeur" => i18n("inventaire.valeur",'en'),
+    "locataire" => i18n("inventaire.locataire",'en'),
+    "modele" => i18n("inventaire.modele",'en'),
+    "text_rien" => i18n("inventaire.text_rien",'en'),
+    "telecharge" => i18n("inventaire.telecharge",'en'),
+    "pdf"  => i18n("inventaire.pdf",'en'),
+    "word"  => i18n("inventaire.word",'en'),
+    "etat_de_lieux" => i18n("inventaire.etat_de_lieux",'en'),
+    "donne_identifiant" => i18n("inventaire.donne_identifiant",'en'),
+    "nouveau" => i18n("inventaire.nouveau",'en'),
+    "info_g" => i18n("inventaire.info_g",'en'),
+    "nouvelle_piece" => i18n("inventaire.nouvelle_piece",'en'),
+    "ajouter_piece" => i18n("inventaire.ajouter_piece",'en'),
+    "piece" => i18n("inventaire.piece",'en'),
+    "element" => i18n("inventaire.element",'en'),
+    "nombre" => i18n("inventaire.nombre",'en'),
+    "etat" => i18n("inventaire.etat",'en'),
+    "prix" => i18n("inventaire.prix",'en'),
+    "commentaire" => i18n("inventaire.commentaire",'en'),
+    "ajout_champ" => i18n("inventaire.ajout_champ",'en'),
+    "sauvegarder" => i18n("inventaire.sauvegarder",'en'),
+    "precedent" => i18n("inventaire.precedent",'en'),
+    "suivant" => i18n("inventaire.suivant",'en'),
+    "nom_piece" => i18n("inventaire.nom_piece",'en'),
+    "non_verifie" => i18n("inventaire.non_verifie",'en'),
+    "enregistrement_success" => i18n("inventaire.enregistrement_success",'en'),
+    "modifier" => i18n("inventaire.modifier",'en'),
+    "titre_modification" => i18n("inventaire.titre_modification",'en'),
+
+
+]
+?>
